@@ -84,5 +84,49 @@ namespace Arrays
                 Console.WriteLine(numero[i] + " ");
             }
         }
+        /*(4.1.3.2) Crea un programa que pregunte al usuario cuántos números enteros va a
+        introducir (por ejemplo, 10), le pida todos esos números, los guarde en un array y
+        finalmente calcule y muestre la media de esos números.*/
+        public static void Example4132()
+        {
+            Console.WriteLine("Cuantos número enteros vas a introducir: ");
+            int integer = Convert.ToInt32(Console.ReadLine());
+            int[] numeros = new int[integer]; //después de new indico la cantidad de esos arrays a ocupar
+
+            for (int i = 0; i <= numeros.Length - 1; i++)   // Pedimos los datos
+            {
+                Console.Write("Introduce el dato numero " + (i + 1) + ": ");
+                numeros[i] = Convert.ToInt32(Console.ReadLine());
+
+                int suma = 0;
+                int media;
+                for (int j = 0; j <= numeros.Length - 1; j++)
+                {
+                    suma += numeros[j];
+
+                }
+                media = suma / numeros.Length;
+                Console.WriteLine("La media es: " + media);
+            }
+        }
+        /*(4.1.3.3) Un programa que pida al usuario 10 reales de doble precisión, calcule su
+        media y luego muestre los que están por encima de la media.*/
+        public static void Example4133()
+        {
+            int i = 0;
+            while (i < 10)
+            {
+                int[] num = { Convert.ToInt32(Program.ReadNumber()) };
+            }
+            
+
+            for (i; i < num.Length; i++)
+            {
+                float media = 0;
+                media = num.Length / media;
+                Console.WriteLine("La media es: "+media);
+            }
+
+        }
     }
 }

@@ -59,14 +59,15 @@ namespace Arrays
             float numero4 = ReadNumber();
             float numero5 = ReadNumber();
             Console.Write("La inversa del número es:");
-            Exercices.Example4112(numero1, numero2, numero3, numero4, numero5);*/
+            Exercices.Example4112(numero1, numero2, numero3, numero4, numero5);
 
+            
             //4121
             Console.WriteLine("Escribe un número del mes: ");
             int numero6 = Convert.ToInt32(Console.ReadLine());
             int result = Exercices.Example4121(numero6);
             Console.WriteLine("Los días que tiene el més " + numero6 + " son: " + result);
-            /*
+            
             //4131
              int option3 = ReadInteger();
              int option4 = ReadInteger();
@@ -77,6 +78,8 @@ namespace Arrays
              Console.Write("La inversa del número es: ");
              Exercices.Example4131(option3,option4,option5,option6,option7,option8);*/
 
+            //Exercices.Example4132();
+            Exercices.Example4133();
         }
     }
 }
