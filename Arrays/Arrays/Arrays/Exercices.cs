@@ -113,14 +113,9 @@ namespace Arrays
         media y luego muestre los que están por encima de la media.*/
         public static void Example4133()
         {
-            int i = 0;
-            while (i < 10)
-            {
-                int[] num = { Convert.ToInt32(Program.ReadNumber()) };
-            }
-            
+            int[] num = { Convert.ToInt32(Program.ReadNumber()) };
 
-            for (i; i < num.Length; i++)
+            for (int i = 0; i < num.Length-1; i++)
             {
                 float media = 0;
                 media = num.Length / media;
