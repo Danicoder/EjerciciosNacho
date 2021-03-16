@@ -1,0 +1,90 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Arrays
+{
+    class EjerciciosClaseOpcionales
+    {
+        /*https://dam.org.es/ejercicios-de-arrays-resueltos/*/
+
+
+        /*1.Definir un vector donde almacenar los nombres de 5 personas. Realizar un programa que ordene alfabeticamente*/
+        public static void OrdenNombreAlfabeto()
+        {
+            string[] nombre = new string[5];
+
+            for(int i = 0; i < nombre.Length-1; i++) //recorrer array de izquierda a derecha
+            {
+                Console.WriteLine("Introduce el nombre:  ");
+                nombre[i] = Console.ReadLine();
+                
+                for (int j = i + 1; j < nombre.Length; j++)//compara las posiciones desde la siguiente hasta la última
+                {
+                    //if(a > b)
+                    if (nombre[i].CompareTo(nombre[j]) > 0)
+                    {
+                        /*Intercambio*/
+                        string aux = nombre[i]; //se utiliza para guardar el primer dato y luego poder recuperarlo
+                        nombre[i] = nombre[j]; //el dato guardado se remplaza con el otro
+                        nombre[j] = aux; //le doy el valor que había guardado antes
+                    }
+                }
+                Console.WriteLine("Los nombres ordenados serían:  " + nombre[i]+ " ");
+            }
+        }
+        /*2.Ingresa un vector de n elementos de tipo entero.Ordenar posteriormente el vector en forma ascendente(de menor a mayor)*/
+        public static void OrdenAscendente()
+        {
+            int[] vector = { 1,56,30,48,79,100,-5,1,-79 }; //ocho elementos desde 0
+
+            for (int j = 0; j < vector.Length; j++)
+            {
+                for(int i = 0; i < vector.Length-1; i++)
+                {
+                    if(vector[i] > vector[i + 1])
+                    {
+                        int aux;
+                        aux = vector[i];
+                        vector[i] = vector[i + 1];
+                        vector[i + 1] = aux;
+                    }
+                }
+            }
+            Console.WriteLine("Vector ordenados en forma ascendente");
+            for (int f = 0; f < vector.Length; f++)
+            {
+                Console.Write(vector[f] + "  ");
+            }
+        }
+        /*3.Escribe un programa que pida 10 numeros por teclado, los almacene en un array y que luego muestre el maximo valor, el minimo
+         y las posiciones que ocupan en el array*/
+        public static void MaxValue()
+        {
+            int[] numeros = new int[4];
+            int max = numeros[0];
+            int min = numeros[0];
+            int positionMin = 0, positionMax = 0;
+            for (int i = 0; i < numeros.Length;i++)
+            {
+                Console.WriteLine("Introduce numeros:  ");
+                numeros[i] = Convert.ToInt32(Console.ReadLine());
+
+                if(numeros[i] >= max)
+                {
+                    max = numeros[i];
+                    positionMax = i+1;
+                }
+                else if (numeros[i] <= max)
+                {
+                    min = numeros[i];
+                    positionMin = i + 1;
+                }
+            }
+            Console.WriteLine("El mínimo es:  " + min + " y su posicion es " + positionMin);
+            Console.WriteLine("El máximo es:  " + max + " y su posicion es " + positionMax);
+        }
+        /*4.Escribe un programa con 20 números almacenados en un array.El programa debe crear un nuevo arrray con los números primos que haya entre
+         esos 20 números.Luego debe mostrar los dos Arrays*/
+    }
+}

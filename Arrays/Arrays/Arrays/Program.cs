@@ -79,7 +79,33 @@ namespace Arrays
              Exercices.Example4131(option3,option4,option5,option6,option7,option8);*/
 
             //Exercices.Example4132();
-            Exercices.Example4133();
+            //Exercices.Example4133();
+            //Exercices.Example4134();
+            //Exercices.Example4135();
+            //Exercices.Example4137();
+            //Exercices.Example4138();
+            //EjerciciosClaseOpcionales.OrdenNombreAlfabeto();
+            EjerciciosClaseOpcionales.OrdenAscendente();
+            //EjerciciosClaseOpcionales.MaxValue(); //funciona correctamente
+
+
         }
     }
 }
+/*PARA SOLICITAR NUMEROS AL USUARIO EN UN ARRAY*/
+/*public void Cargar()
+        {
+            Console.Write("Cuantos longitud del vector:");
+            string linea;
+            linea = Console.ReadLine();
+            int cant;
+            cant = int.Parse(linea);
+            vector = new int[cant];
+            for (int f = 0; f < vector.Length; f++)
+            {
+                Console.Write("Ingrese elemento "+(f+1)+": ");
+                linea = Console.ReadLine();
+                vector[f] = int.Parse(linea);
+            }
+        }
+*/
