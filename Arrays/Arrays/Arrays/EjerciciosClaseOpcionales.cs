@@ -13,13 +13,12 @@ namespace Arrays
         public static void OrdenNombreAlfabeto()
         {
             string[] nombre = new string[5];
-
-            for(int i = 0; i < nombre.Length-1; i++) //recorrer array de izquierda a derecha
+            int i;
+            for (i = 0; i < nombre.Length-1; i++) //recorrer array de izquierda a derecha
             {
-                Console.WriteLine("Introduce el nombre:  ");
+                Console.WriteLine("Introduce el nombre {0}:  ",i+1);
                 nombre[i] = Console.ReadLine();
-                
-                for (int j = i + 1; j < nombre.Length; j++)//compara las posiciones desde la siguiente hasta la última
+                for (int j = 0; j < nombre.Length; j++)//compara las posiciones desde la siguiente hasta la última
                 {
                     //if(a > b)
                     if (nombre[i].CompareTo(nombre[j]) > 0)
@@ -30,8 +29,10 @@ namespace Arrays
                         nombre[j] = aux; //le doy el valor que había guardado antes
                     }
                 }
-                Console.WriteLine("Los nombres ordenados serían:  " + nombre[i]+ " ");
             }
+            
+            for (int n = 0; n < nombre.Length; n++)
+                Console.WriteLine(nombre[n]);
         }
         /*2.Ingresa un vector de n elementos de tipo entero.Ordenar posteriormente el vector en forma ascendente(de menor a mayor)*/
         public static void OrdenAscendente()
@@ -86,5 +87,50 @@ namespace Arrays
         }
         /*4.Escribe un programa con 20 números almacenados en un array.El programa debe crear un nuevo arrray con los números primos que haya entre
          esos 20 números.Luego debe mostrar los dos Arrays*/
+        public static int NumerosPrimos()
+        {
+            int[] numero = new int[20];
+            int[] primos = new int[20];
+
+            for(int i = 0; i < numero.Length;i++)
+            {
+                Console.WriteLine("Introducir valor {0}",i +1); //introduzca el valor 1
+                numero[i]=Convert.ToInt32(Console.ReadLine());
+            }
+            int contador = 0;
+            for(int i = 0; i < numero.Length;i++)
+            {
+                if (Esprimo(numero[i]))
+                    contador += 1;
+            }
+            if (contador == 0)
+                Console.WriteLine("No es primo");
+            else
+            {
+                //rellenar el nuevo array solo con el array de los primos
+                int[] primo = new int[contador];
+                int b = 0;
+                for(int i =0;i<numero.Length;i++)
+                {
+                    if(Esprimo(numero[i]))
+                    {
+                        primo[b] = numero[i];
+                        b++;
+                    }
+                }
+            }
+        }
+        public static bool Esprimo(int num)
+        {
+            for (int i = 2; i < num; i++)
+            {
+                if ((num % 2) == i)
+                {
+                    return false;
+                }
+                else return true;
+            }
+        }
     }
+    
 }
