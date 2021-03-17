@@ -87,7 +87,7 @@ namespace Arrays
         }
         /*4.Escribe un programa con 20 números almacenados en un array.El programa debe crear un nuevo arrray con los números primos que haya entre
          esos 20 números.Luego debe mostrar los dos Arrays*/
-        public static int NumerosPrimos()
+        /*public static void NumerosPrimos()
         {
             int[] numero = new int[20];
             int[] primos = new int[20];
@@ -119,8 +119,8 @@ namespace Arrays
                     }
                 }
             }
-        }
-        public static bool Esprimo(int num)
+        }*/
+        /*public static bool Esprimo(int num)
         {
             for (int i = 2; i < num; i++)
             {
@@ -130,7 +130,7 @@ namespace Arrays
                 }
                 else return true;
             }
-        }
+        }*/
     }
     
 }

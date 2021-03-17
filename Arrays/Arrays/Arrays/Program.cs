@@ -84,11 +84,11 @@ namespace Arrays
             //Exercices.Example4135();
             //Exercices.Example4137();
             //Exercices.Example4138();
-            //EjerciciosClaseOpcionales.OrdenNombreAlfabeto();
+            EjerciciosClaseOpcionales.OrdenNombreAlfabeto();
             //EjerciciosClaseOpcionales.OrdenAscendente();
             //EjerciciosClaseOpcionales.MaxValue(); //funciona correctamente
-            EjerciciosClaseOpcionales.Esprimo(41);
-            EjerciciosClaseOpcionales.NumerosPrimos();
+            //EjerciciosClaseOpcionales.Esprimo(4);
+            //EjerciciosClaseOpcionales.NumerosPrimos();
 
 
         }
