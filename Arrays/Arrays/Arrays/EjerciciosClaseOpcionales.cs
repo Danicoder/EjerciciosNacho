@@ -14,11 +14,11 @@ namespace Arrays
         {
             string[] nombre = new string[5];
             int i;
-            for (i = 0; i < nombre.Length-1; i++) //recorrer array de izquierda a derecha
+            for (i = 0; i < nombre.Length; i++) //recorrer array de izquierda a derecha
             {
                 Console.WriteLine("Introduce el nombre {0}:  ",i+1);
                 nombre[i] = Console.ReadLine();
-                for (int j = 0; j < nombre.Length; j++)//compara las posiciones desde la siguiente hasta la última
+                for (int j = 0; j < nombre.Length-1; j++)//compara las posiciones desde la siguiente hasta la última
                 {
                     //if(a > b)
                     if (nombre[i].CompareTo(nombre[j]) > 0)
@@ -39,18 +39,15 @@ namespace Arrays
         {
             int[] vector = { 1,56,30,48,79,100,-5,1,-79 }; //ocho elementos desde 0
 
-            for (int j = 0; j < vector.Length; j++)
+            for (int i = 0; i < vector.Length; i++)
             {
-                for(int i = 0; i < vector.Length-1; i++)
-                {
-                    if(vector[i] > vector[i + 1])
+                    if(vector[i] < vector[i + 1])
                     {
                         int aux;
                         aux = vector[i];
                         vector[i] = vector[i + 1];
                         vector[i + 1] = aux;
                     }
-                }
             }
             Console.WriteLine("Vector ordenados en forma ascendente");
             for (int f = 0; f < vector.Length; f++)

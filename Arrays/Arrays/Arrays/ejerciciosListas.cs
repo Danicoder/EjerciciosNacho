@@ -15,6 +15,7 @@ namespace Arrays
             Console.WriteLine("Introduzca nuevo valor");
             int numero = Convert.ToInt32(Console.ReadLine());
             int contador = 0;
+            listnumeros.Add(buscar);
             for(int i = 0; i < listnumeros.Count; i++)
             {
                 if(listnumeros[i] == buscar)
