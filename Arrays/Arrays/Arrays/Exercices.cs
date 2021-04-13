@@ -210,7 +210,7 @@ namespace Arrays
         otro nombre y a decir si se encuentra entre ellos, y así sucesivamente hasta que se 
         teclee "fin"*/
 
-        public static void Example4135()
+        public static void Example4136()
         {
             for (int i = 0; i < 3; i++)
             {
@@ -277,7 +277,7 @@ namespace Arrays
             string[] nombre = option.Split(' ');
             for (int i = 0; i < nombres.Length; i++)
             {
-                nombres[i] = nombre[i];
+                //nombres[i] = nombre[i];
                 Console.WriteLine(" " + nombre[i]);
             }
         }
@@ -305,33 +305,209 @@ namespace Arrays
                 }
             }
         }
+        /*(4.1.3.9) Un programa que reserve espacio para dos vectores de 3 componentes, 
+        pida al usuario sus valores y calcule la suma de ambos vectores (su primera 
+        componente será x1+y1, la segunda será x2+y2 y así sucesivamente).*/
+        public static void Example4139()
+        {
+            int[] vectorU = new int[3];
+            int[] vectorV = new int[3];
+            for (int i = 0; i <= 2; i++)
+            {
+                Console.Write("Introduce los valores para el vector V de la posición:  x " + i + ": ");
+                vectorU[i] = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Introduce los valores para el vector U de la posición:  y " + i + ": ");
+                vectorV[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            int sum = 0;
+            for (int j = 0; j < vectorU.Length; j++) //al tener ambos vectores las mismas dimensiones no importa colocar cómo límite uno u otro
+            {
+                sum += vectorU[j] + vectorV[j];
+            }
+            Console.WriteLine("La suma de ambos vectores es: {0}", sum);
+        }
         /*(4.1.3.10) Un programa que reserve espacio para dos vectores de 3 componentes, 
         pida al usuario sus valores y calcule su producto escalar (x1·y1+ x2·y2+x3·y3).*/
-        /*public static void Example4139()
+        public static void Example41310 ()
         {
-            int[] vectores = new int[3];
-
-            for (int i = 0; i < vectores.Length; i++)
+            int[] vectorU = new int[3];
+            int[] vectorV = new int[3];
+            for (int i = 0; i <= 2; i++)
             {
-                int multiplicacion = 0;
-                double productoEscalar;
-                while (i < 3)
+                Console.Write("Introduce los valores para el vector V de la posición:  x " + i + ": ");
+                vectorU[i] = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Introduce los valores para el vector U de la posición:  y " + i + ": ");
+                vectorV[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            int multiply;
+            int sum = 0;
+            for (int j = 0; j < vectorU.Length; j++) //al tener ambos vectores las mismas dimensiones no importa colocar cómo límite uno u otro
+            {
+                multiply = vectorU[j] * vectorV[j];
+                sum += multiply;
+            }
+            Console.WriteLine("El producto escalar es: {0}", sum);
+        }
+        /*(4.1.3.11) Un programa que pida al usuario 4 números enteros y calcule (y 
+        muestre) cuál es el mayor de ellos. Nota: para calcular el mayor valor de un array, 
+        hay que comparar cada uno de los valores que tiene almacenados el array con el 
+        que hasta ese momento es el máximo provisional. El valor inicial de este máximo 
+        provisional no debería ser cero (porque el resultado sería incorrecto si todos los 
+        números son negativos), sino el primer elemento del array*/
+        public static int Example41311(int[] option)
+        {
+            //long max = Int32.MinValue; enteros largo por debajo del menor valor aceptable para un int
+            int max = option[0];
+            for (int j = 0; j < option.Length; j++)
+            {
+                if (option[j] >= max)
                 {
-                    Console.Write("Introduce los valores para los vectores: ");
-                    vectores[i] = Convert.ToInt32(Console.ReadLine());
-                    multiplicacion = vectores[i];
-                    
-                    switch(vectores[i])
-                    {
-                        case 0:
-                            Console.WriteLine("El producto escalar es " + productoEscalar);
-                            break;
-                    }     
-                    if (i == 2)
-                        Console.WriteLine("El producto escalar es " + productoEscalar);
-                    i++;
+                    max = option[j];
                 }
             }
-        }*/
+            return max;
+        }
+        /*(4.1.4.1) Crea una variante del ejemplo anterior (04_01_04a) que pida al usuario el 
+        dato a buscar, avise si ese dato no aparece, y que diga cuántas veces se ha 
+        encontrado en caso contrario.*/
+        public static void Example4141()
+        {
+            int[] datos = { 10, 15, 12, 0, 0 };
+
+            Console.WriteLine("Introduce el dato a buscar");
+            int buscar = Convert.ToInt32(Console.ReadLine());
+            int cantidad = 0;
+            for (int i = 0; i < datos.Length; i++)
+            {
+                if (datos[i] == buscar)
+                {
+                    cantidad++;
+                }
+                else Console.WriteLine("El dato no aparece en la posición {0}", i + 1);
+            }
+            Console.WriteLine("El dato aparece " + cantidad + " veces");
+        }
+        /*(4.1.4.2) Crea una variante del ejemplo anterior (04_01_04a) que añada un dato 
+        introducido por el usuario al final de los datos existentes.*/
+        public static void Example4142()
+        {
+            int[] datos = { 10, 15, 12, 0, 0 };
+            int capacidad = 4; // Capacidad maxima del array
+            int cantidad = 3; //posiciones ocupadas
+            Console.WriteLine("Introduce un dato");
+            int dato = Convert.ToInt32(Console.ReadLine());
+
+            for(int i =0; i < datos.Length; i ++)
+            {
+                if (cantidad < capacidad)
+                {
+                    datos[cantidad] = dato;
+                    cantidad++;
+                }
+                Console.WriteLine(datos[i] + " ");
+            }
+           
+        }
+        /*(4.1.4.3) Crea una variante del ejemplo anterior (04_01_04a) que inserte un dato 
+        introducido por el usuario en la posición que elija el usuario. Debe avisar si la 
+        posición escogida es incorrecta (porque esté más allá del final de los datos).*/
+        public static void Example4143()
+        {
+            int[] datos = { 10, 15, 12, 0, 0 };
+            int capacidad = 5; // Capacidad maxima del array
+            int cantidad = 3; //posiciones ocupadas
+            Console.WriteLine("Introduce un dato ");
+            int dato = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("¿En qué posición?");
+            int posicion = Convert.ToInt32(Console.ReadLine());
+            /*NOSE CÓMO INTERCAMBIAR DE POSICIÓN TRAS INSERTAR EL NÚMERO SOLICITADO*/
+            for (int i = 0; i < datos.Length-1; i++)
+            {
+                int savenumber = 0;
+                if (posicion <= capacidad)
+                {
+                    savenumber = datos[posicion];
+                    datos[posicion] = dato;
+                    cantidad++;
+                }
+                else Console.WriteLine("La posición supera el límite del array");
+
+                for (int j = i+1; j < datos.Length; j++)
+                {
+                    int aux = savenumber;
+                    savenumber = datos[j];
+                    datos[j] = aux;
+                }
+            }
+        }
+        /*(4.1.4.4) Crea una variante del ejemplo anterior (04_01_04a) que borre el dato que 
+        se encuentre en la posición que elija el usuario. Debe avisar si la posición escogida 
+        no es válida.*/
+        public static void Example4144()
+        {
+            int[] datos = { 10, 15, 12, 0, 0 };
+            Console.WriteLine("Introduce la posición del dato que quieras borrar ");
+            int posicionBorrar = Convert.ToInt32(Console.ReadLine());
+            int cantidad = 3;
+            for (int i = posicionBorrar; i <= cantidad-1; i++)
+            {
+                datos[i] = datos[i - 1];
+            }
+            cantidad--;
+            
+        }
+        /*(4.1.4.5) Crea un programa que prepare espacio para un máximo de 10 nombres. 
+        Deberá mostrar al usuario un menú que le permita realizar las siguientes 
+        operaciones: 
+        * Añadir un dato al final de los ya existentes.
+        * Insertar un dato en una cierta posición (como ya se ha comentado, los que 
+        quedén detrás deberán desplazarse "a la derecha" para dejarle hueco; por 
+        ejemplo, si el array contiene "hola", "adios" y se pide insertar "bien" en la 
+        segunda posición, el array pasará a contener "hola", "bien", "adios".
+        * Borrar el dato que hay en una cierta posición (como se ha visto, lo que 
+        estaban detrás deberán desplazarse "a la izquierda" para que no haya 
+        huecos; por ejemplo, si el array contiene "hola", "bien", "adios" y se pide
+        borrar el dato de la segunda posición, el array pasará a contener "hola", 
+        "adios"
+        * Mostrar los datos que contiene el array.
+        * Salir del programa.*/
+
+        public static void Example4145()
+        {
+            string[] nombres = new string[10];
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Introduce 10 nombres");
+                nombres[i] = Console.ReadLine();
+            }
+        }
+        /*(4.1.5.1) Crea un programa que contenga un array con los nombres de los meses 
+        del año. El usuario podrá elegir entre verlos en orden natural (de Enero a 
+        Diciembre) o en orden inverso (de Diciembre a Enero). Usa constantes para el 
+        valor máximo del array en ambos recorridos.*/
+        public static void Example4151()
+        {
+            string[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiempre", "Octubre", "Noviembre", "Diciembre" };
+
+            Console.WriteLine("Quieres ver los meses del año tal que así: de Enero a Diciembre");
+            string option = Console.ReadLine();
+            
+            if(false)
+            {
+                const int MAXIMO = 12;
+                for (int j = 0; j < MAXIMO; j++)
+                {
+                    Console.WriteLine(meses[j]);
+                }
+            }
+            else
+            {
+                const int MAXIMO = 11;
+                for (int i = MAXIMO; i >= 0; i--)
+                {
+                        Console.WriteLine(meses[i]);
+                }
+            }
+        }
     }
 }

@@ -12,27 +12,31 @@ namespace Arrays
         /*1.Definir un vector donde almacenar los nombres de 5 personas. Realizar un programa que ordene alfabeticamente*/
         public static void OrdenNombreAlfabeto()
         {
-            string[] nombre = new string[5];
-            int i;
-            for (i = 0; i < nombre.Length-1; i++) //recorrer array de izquierda a derecha
+            string[] personas = new string[5];
+            int pregunta;
+            for (pregunta = 0; pregunta < personas.Length;pregunta++)
             {
-                Console.WriteLine("Introduce el nombre {0}:  ",i+1);
-                nombre[i] = Console.ReadLine();
-                for (int j = 0; j < nombre.Length; j++)//compara las posiciones desde la siguiente hasta la última
+                Console.WriteLine("Introduce el nombre {0}:  ", pregunta + 1);
+                personas[pregunta] = Console.ReadLine();
+            }
+            //ordenar datos intoducidos en el paso anterior
+            for (int i = pregunta; i <= personas.Length; i++) //recorrer array de izquierda a derecha
+            {
+                for (int j = 0; j < personas.Length-1; j++)//compara las posiciones desde la siguiente hasta la última
                 {
                     //if(a > b)
-                    if (nombre[i].CompareTo(nombre[j]) > 0)
+                    if (personas[pregunta].CompareTo(personas[j]) > 0)
                     {
                         /*Intercambio*/
-                        string aux = nombre[i]; //se utiliza para guardar el primer dato y luego poder recuperarlo
-                        nombre[i] = nombre[j]; //el dato guardado se remplaza con el otro
-                        nombre[j] = aux; //le doy el valor que había guardado antes
+                        string aux = personas[i]; //se utiliza para guardar el primer dato y luego poder recuperarlo
+                        personas[i] = personas[j]; //el dato guardado se remplaza con el otro
+                        personas[j] = aux; //le doy el valor que había guardado antes
                     }
                 }
             }
             
-            for (int n = 0; n < nombre.Length; n++)
-                Console.WriteLine(nombre[n]);
+            for (int n = 0; n < personas.Length; n++)
+                Console.WriteLine(personas[n]);
         }
         /*2.Ingresa un vector de n elementos de tipo entero.Ordenar posteriormente el vector en forma ascendente(de menor a mayor)*/
         public static void OrdenAscendente()

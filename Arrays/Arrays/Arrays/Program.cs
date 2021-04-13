@@ -81,16 +81,35 @@ namespace Arrays
             //Exercices.Example4132();
             //Exercices.Example4133();
             //Exercices.Example4134();
-            //Exercices.Example4135();
+            //Exercices.Example4136();
             //Exercices.Example4137();
             //Exercices.Example4138();
-            EjerciciosClaseOpcionales.OrdenNombreAlfabeto();
+            //Exercices.Example4139();
+            //Exercices.Example41310();
+
+            /*int[] respuesta = new int[3];
+            for(int i = 0; i < respuesta.Length; i++)
+            {
+                int option = ReadInteger();
+                respuesta[i] = option;
+            }
+            int ResultFinal = Exercices.Example41311(respuesta);
+            Console.WriteLine("El máximo es: {0}", ResultFinal);*/
+
+            //Exercices.Example4141();
+            //Exercices.Example4143();
+            //Exercices.Example4144();
+            Exercices.Example4151();
+            //EjerciciosClaseOpcionales.OrdenNombreAlfabeto();
             //EjerciciosClaseOpcionales.OrdenAscendente();
             //EjerciciosClaseOpcionales.MaxValue(); //funciona correctamente
             //EjerciciosClaseOpcionales.Esprimo(4);
             //EjerciciosClaseOpcionales.NumerosPrimos();
-
-
+            //EjerciciosListas.EjercicioPrueba();
+            //EjerciciosListas.Ejercicio1();
+            //EjerciciosListas.Ejercicio2();
+            //EjerciciosListas.Ejercicio3();
+            //EjerciciosListas.Ejercicio7();
         }
     }
 }
