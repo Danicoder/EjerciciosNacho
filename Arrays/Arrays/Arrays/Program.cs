@@ -84,6 +84,7 @@ namespace Arrays
             //Exercices.Example4136();
             //Exercices.Example4137();
             //Exercices.Example4138();
+
             //Exercices.Example4139();
             //Exercices.Example41310();
 
@@ -100,16 +101,21 @@ namespace Arrays
             //Exercices.Example4143();
             //Exercices.Example4144();
             Exercices.Example4151();
+
             //EjerciciosClaseOpcionales.OrdenNombreAlfabeto();
             //EjerciciosClaseOpcionales.OrdenAscendente();
             //EjerciciosClaseOpcionales.MaxValue(); //funciona correctamente
             //EjerciciosClaseOpcionales.Esprimo(4);
             //EjerciciosClaseOpcionales.NumerosPrimos();
+
             //EjerciciosListas.EjercicioPrueba();
             //EjerciciosListas.Ejercicio1();
             //EjerciciosListas.Ejercicio2();
             //EjerciciosListas.Ejercicio3();
             //EjerciciosListas.Ejercicio7();
+
+            ejerciciosListas.Ejercicio2();
+
         }
     }
 }

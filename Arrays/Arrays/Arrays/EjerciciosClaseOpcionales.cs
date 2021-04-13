@@ -12,6 +12,7 @@ namespace Arrays
         /*1.Definir un vector donde almacenar los nombres de 5 personas. Realizar un programa que ordene alfabeticamente*/
         public static void OrdenNombreAlfabeto()
         {
+
             string[] personas = new string[5];
             int pregunta;
             for (pregunta = 0; pregunta < personas.Length;pregunta++)
@@ -23,6 +24,15 @@ namespace Arrays
             for (int i = pregunta; i <= personas.Length; i++) //recorrer array de izquierda a derecha
             {
                 for (int j = 0; j < personas.Length-1; j++)//compara las posiciones desde la siguiente hasta la última
+
+            string[] nombre = new string[5];
+            int i;
+            for (i = 0; i < nombre.Length; i++) //recorrer array de izquierda a derecha
+            {
+                Console.WriteLine("Introduce el nombre {0}:  ",i+1);
+                nombre[i] = Console.ReadLine();
+                for (int j = 0; j < nombre.Length-1; j++)//compara las posiciones desde la siguiente hasta la última
+
                 {
                     //if(a > b)
                     if (personas[pregunta].CompareTo(personas[j]) > 0)
@@ -43,18 +53,15 @@ namespace Arrays
         {
             int[] vector = { 1,56,30,48,79,100,-5,1,-79 }; //ocho elementos desde 0
 
-            for (int j = 0; j < vector.Length; j++)
+            for (int i = 0; i < vector.Length; i++)
             {
-                for(int i = 0; i < vector.Length-1; i++)
-                {
-                    if(vector[i] > vector[i + 1])
+                    if(vector[i] < vector[i + 1])
                     {
                         int aux;
                         aux = vector[i];
                         vector[i] = vector[i + 1];
                         vector[i + 1] = aux;
                     }
-                }
             }
             Console.WriteLine("Vector ordenados en forma ascendente");
             for (int f = 0; f < vector.Length; f++)
