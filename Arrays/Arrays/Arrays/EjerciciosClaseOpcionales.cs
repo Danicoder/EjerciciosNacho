@@ -23,30 +23,29 @@ namespace Arrays
             //ordenar datos intoducidos en el paso anterior
             for (int i = pregunta; i <= personas.Length; i++) //recorrer array de izquierda a derecha
             {
-                for (int j = 0; j < personas.Length-1; j++)//compara las posiciones desde la siguiente hasta la última
+                string[] nombre = new string[5];
 
-            string[] nombre = new string[5];
-            int i;
-            for (i = 0; i < nombre.Length; i++) //recorrer array de izquierda a derecha
-            {
-                Console.WriteLine("Introduce el nombre {0}:  ",i+1);
-                nombre[i] = Console.ReadLine();
-                for (int j = 0; j < nombre.Length-1; j++)//compara las posiciones desde la siguiente hasta la última
-
+                for (int j = 0; j < nombre.Length; j++) //recorrer array de izquierda a derecha
                 {
-                    //if(a > b)
-                    if (personas[pregunta].CompareTo(personas[j]) > 0)
+                    Console.WriteLine("Introduce el nombre {0}:  ",j+1);
+                    nombre[j] = Console.ReadLine();
+                    for (int h = 0; h < nombre.Length-1; h++)//compara las posiciones desde la siguiente hasta la última
+
                     {
-                        /*Intercambio*/
-                        string aux = personas[i]; //se utiliza para guardar el primer dato y luego poder recuperarlo
-                        personas[i] = personas[j]; //el dato guardado se remplaza con el otro
-                        personas[j] = aux; //le doy el valor que había guardado antes
+                        //if(a > b)
+                        if (personas[pregunta].CompareTo(personas[h]) > 0)
+                        {
+                            /*Intercambio*/
+                            string aux = personas[h]; //se utiliza para guardar el primer dato y luego poder recuperarlo
+                            personas[h] = personas[h]; //el dato guardado se remplaza con el otro
+                            personas[h] = aux; //le doy el valor que había guardado antes
+                        }
                     }
                 }
-            }
             
-            for (int n = 0; n < personas.Length; n++)
-                Console.WriteLine(personas[n]);
+                for (int n = 0; n < personas.Length; n++)
+                    Console.WriteLine(personas[n]);
+            }
         }
         /*2.Ingresa un vector de n elementos de tipo entero.Ordenar posteriormente el vector en forma ascendente(de menor a mayor)*/
         public static void OrdenAscendente()

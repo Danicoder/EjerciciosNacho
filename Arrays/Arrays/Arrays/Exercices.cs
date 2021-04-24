@@ -421,13 +421,14 @@ namespace Arrays
             Console.WriteLine("¿En qué posición?");
             int posicion = Convert.ToInt32(Console.ReadLine());
             /*NOSE CÓMO INTERCAMBIAR DE POSICIÓN TRAS INSERTAR EL NÚMERO SOLICITADO*/
-            for (int i = 0; i < datos.Length-1; i++)
+            for (int i = 1; i <= datos.Length-1; i++)
             {
-                int savenumber = 0;
+                int savenumber = 0, nextnumber = 0;
                 if (posicion <= capacidad)
                 {
-                    savenumber = datos[posicion];
-                    datos[posicion] = dato;
+                    savenumber = datos[posicion];//12
+                    nextnumber = datos[i + 2];
+                    nextnumber = savenumber;
                     cantidad++;
                 }
                 else Console.WriteLine("La posición supera el límite del array");

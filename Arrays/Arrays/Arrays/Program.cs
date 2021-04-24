@@ -98,9 +98,10 @@ namespace Arrays
             Console.WriteLine("El máximo es: {0}", ResultFinal);*/
 
             //Exercices.Example4141();
-            //Exercices.Example4143();
+            //Exercices.Example4142();
+            Exercices.Example4143();
             //Exercices.Example4144();
-            Exercices.Example4151();
+            //Exercices.Example4151();
 
             //EjerciciosClaseOpcionales.OrdenNombreAlfabeto();
             //EjerciciosClaseOpcionales.OrdenAscendente();
@@ -114,7 +115,7 @@ namespace Arrays
             //EjerciciosListas.Ejercicio3();
             //EjerciciosListas.Ejercicio7();
 
-            ejerciciosListas.Ejercicio2();
+            //ejerciciosListas.Ejercicio2();
 
         }
     }
